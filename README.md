@@ -1,0 +1,56 @@
+## *Desafio Renner WEB* 
+
+### Cenário/Requisito obrigatório
+
+- **1 - WEB**
+
+*Desenvolva, uma automação de testes para o e-commerce: https://automationexercise.com/*
+<br/><br/>
+O projeto deve conter, pelo menos, um cenário de teste para a seguinte História do Usuário:
+<br/><br/>
+#### História do Usuário:
+Como um cliente cadastrado no https://automationexercise.com/  
+Eu quero fazer a compra de ao menos três produtos  
+Para que eu possa estar bem vestida  
+
+Os seguintes produtos do e-commerce devem ser adicionados ao carrinho de compras com as seguintes quantidades.  
+ - Stylish Dress  - 3 Itens  
+ - Beautiful Peacock Blue Cotton Linen Saree - 2 itens  
+ - Men Tshirt - 1  
+
+#### Cenário Bônus
+Como um usuário sem cadastro no https://automationexercise.com/
+Eu quero me cadastrar no e-commerce
+Para que eu possa realizar compras.
+#### *Observação*:
+- No Cenário Bonus realizamos o cadastro. Se rodar uma segunda vez o teste, ele irá falhar, para que assim possa gerar a evidência da falha.
+- Esta evidência será salva dentro do projeto, na pasta *resources/evidencias*
+
+----------------------------------------------------------------
+
+### Como executar o projeto:
+1. Importar na IDE de preferencia o projeto como maven java
+2. Abrir o arquivo RunnerTest.java e executar via Junit
+
+----------------------------------------------------------------
+
+### Arquitetura do Projeto
+Pacotes:
+
+- Core: Pacote responsavel pela parte do core da automação, como acesso ao driver e ações dos elementos
+- Enums: Pacote responsavel para guardar qualquer Enum que seja necessário criar
+- Maps: Pacote responsavel pela parte dos mapeamentos dos campos, onde os objetos dos campos são instanciadas através da anotação do PageFactory
+- Pages: Pacote responsavel pela parte das ações das paginas, como preenchimento, cliques, retornos de conteudos.
+- Runner: Pacote responsavel pela parte das classes de execuções utilizando JUnit e RunWith Cucumber.class
+- Utils: Pacote responsavel para guardar todas as classes que contenham metodos que possam ser usadas por varios métodos ou classes
+- Steps: Pacote responsavel para guardar as Classes de Steps, as quais são geradas pelo cucumber. Nessas classes são chamadas as ações das paginas através das pages e validações.
+- Features: Diretório responsável para guardar os arquivos .feature, onde estão gravados os arquivos relacionados ao cucumber e as escrita em gherkin
+----------------------------------------------------------------
+
+### Libs utilizadas
+
+- PageFactory: Responsavel pelo mapeamento dos elementos e integração dos objetos com o driver
+- Cucumber: Dependencia responsável pela leitura dos arquivos .feature escritos em gherkin e realizacao da conversao em metodos.
+- Webdrivermanager de bonigarcia: Dependencia responsavel por gerenciar os drivers, evitando a necessidade de verificar a versao atual do browser, qual browser vai utilizar e buscar o driver para download.
+- Maven: Responsavel por gerenciar as dependencias utilizadas no projeto.
+- JUnit: Dependencia para realizar a execução dos testes atraves da linguagem Java.
